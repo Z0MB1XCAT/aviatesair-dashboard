@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AviatesAir — Signup</title>
+<style>
+  body{font-family:Inter,Segoe UI,Arial;background:#f7f7f8;color:#111;margin:0}
+  header{padding:12px 20px;border-bottom:1px solid #eee;display:flex;align-items:center;gap:12px}
+  header img{height:44px}
+  main{max-width:600px;margin:40px auto;padding:20px}
+  .card{background:#fff;padding:20px;border-radius:8px;border:1px solid #eee}
+  label{display:block;margin-top:10px;font-weight:600}
+  input,select{width:100%;padding:10px;margin-top:6px;border:1px solid #ddd;border-radius:6px}
+  button{margin-top:12px;padding:10px 14px;background:#1fa2ff;border:0;color:#fff;border-radius:6px;font-weight:700;cursor:pointer}
+  footer{padding:20px;text-align:center;color:#666}
+</style>
+</head>
+<body>
+<header>
+  <img src="Aviatesairlogo.png" alt="logo">
+  <nav style="margin-left:auto"><a href="index.html">Home</a></nav>
+</header>
+
+<main>
+  <div class="card">
+    <h2>Sign up to AviatesAir</h2>
+    <p>Fill in details. After signup you will be provided an ACARS key (demo behavior).</p>
+
+    <label for="email">Email</label>
+    <input id="email" type="email" placeholder="you@example.com" />
+
+    <label for="callsign">Preferred Callsign / Flight Number</label>
+    <input id="callsign" type="text" placeholder="AVI123" />
+
+    <label for="simbrief">SimBrief ID (optional)</label>
+    <input id="simbrief" type="text" placeholder="simbrief_username" />
+
+    <button id="registerBtn">Create Account (demo)</button>
+
+    <p id="result" style="margin-top:12px;color:#0b4f70"></p>
+  </div>
+</main>
+
+<footer>&copy; 2026 AviatesAir</footer>
+
+<script>
+  document.getElementById('registerBtn').addEventListener('click', async ()=>{
+    const email = document.getElementById('email').value.trim();
+    const callsign = document.getElementById('callsign').value.trim();
+    if(!email || !callsign){ alert('Please enter email and callsign.'); return; }
+
+    // Demo: request a key from your worker if live
+    try{
+      const resp = await fetch('/generate-key');
+      if(resp.ok){
+        const j = await resp.json();
+        document.getElementById('result').innerText = 'Demo signup complete — your ACARS key: ' + j.acars_key;
+      } else {
+        document.getElementById('result').innerText = 'Signup demo: key generation unavailable (worker unreachable).';
+      }
+    }catch(e){
+      document.getElementById('result').innerText = 'Signup demo: key generation unavailable (offline).';
+    }
+  });
+</script>
+</body>
+</html>
