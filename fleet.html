@@ -6,14 +6,15 @@
 <title>AviatesAir — Fleet</title>
 <style>
   body{font-family:Inter,Segoe UI,Arial;background:#fff;color:#111;margin:0}
-  header{padding:12px 20px;border-bottom:1px solid #eee;display:flex;align-items:center;gap:12px}
+  header{padding:12px 20px;border-bottom:1px solid #eee;display:flex;align-items:center;gap:12px;background:#fff}
   header img{height:44px}
   main{max-width:1000px;margin:30px auto;padding:20px}
   h1{color:#111}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-  .card{border:1px solid #eee;padding:12px;border-radius:8px;background:#fff}
+  .card{border:1px solid #eee;padding:12px;border-radius:8px;background:#fff;box-shadow:0 6px 18px rgba(10,10,10,0.03)}
   .card img{width:100%;border-radius:6px}
   footer{padding:20px;text-align:center;color:#666}
+  .muted{color:#666;font-size:14px}
 </style>
 </head>
 <body>
@@ -21,15 +22,32 @@
   <img src="Aviatesairlogo.png" alt="logo">
   <nav style="margin-left:auto"><a href="index.html">Home</a></nav>
 </header>
+
 <main>
   <h1>Our Fleet</h1>
-  <p>Placeholder fleet list. Replace images and names with your real fleet.</p>
+  <p class="muted">Placeholder fleet — replace images and descriptions with real fleet entries.</p>
+
   <div class="grid">
-    <div class="card"><img src="placeholder1.jpg" alt=""><h3>A320</h3><p>Typical short-haul airliner</p></div>
-    <div class="card"><img src="placeholder2.jpg" alt=""><h3>B737</h3><p>Popular narrow-body workhorse</p></div>
-    <div class="card"><img src="placeholder3.jpg" alt=""><h3>B787</h3><p>Long-haul widebody</p></div>
+    <div class="card">
+      <img src="placeholder1.jpg" alt="A320">
+      <h3>A320</h3>
+      <p class="muted">Short/medium haul narrowbody.</p>
+    </div>
+
+    <div class="card">
+      <img src="placeholder2.jpg" alt="B737">
+      <h3>B737</h3>
+      <p class="muted">Workhorse narrowbody for regional routes.</p>
+    </div>
+
+    <div class="card">
+      <img src="placeholder3.jpg" alt="B787">
+      <h3>B787</h3>
+      <p class="muted">Long-haul widebody for intercontinental services.</p>
+    </div>
   </div>
 </main>
+
 <footer>&copy; 2026 AviatesAir</footer>
 </body>
 </html>

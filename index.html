@@ -1,252 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>AviatesAir — Home</title>
-<style>
-  :root{
-    --bg:#ffffff;
-    --panel:#0b0b0b;
-    --text:#0b0b0b;
-    --muted:#666;
-    --accent:#1fa2ff;
-    --accent-contrast:#fff;
-  }
-  /* reset */
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
-  a{color:inherit;text-decoration:none}
-
-  /* NAVBAR */
-  header{position:fixed;top:0;left:0;right:0;height:64px;background:#fff;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:1000}
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand img{height:44px;width:auto}
-  .brand h1{font-size:18px;margin:0;color:var(--panel);letter-spacing:1px}
-  nav{display:flex;align-items:center;gap:18px}
-  nav a{font-weight:600;color:var(--panel);padding:8px 10px;border-radius:6px}
-  nav a:hover{background:rgba(31,162,255,0.08);color:var(--accent)}
-  .nav-cta{background:var(--accent);color:var(--accent-contrast);padding:8px 12px;border-radius:6px;font-weight:700}
-
-  /* spacer for fixed header */
-  .spacer{height:64px}
-
-  /* HERO */
-  .hero{
-    min-height:58vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:40px 20px;
-    color:#fff;
-    background:linear-gradient(180deg, rgba(11,31,58,0.7), rgba(11,31,58,0.7)), url('placeholder-hero.jpg') center/cover no-repeat;
-    transition:background-image .2s ease;
-  }
-  .hero-inner{max-width:1000px}
-  .hero h2{font-size:40px;margin:0 0 12px 0;color:#fff}
-  .hero p{font-size:18px;margin:0 0 18px 0;color:rgba(255,255,255,0.92)}
-  .hero button{background:var(--accent);border:0;color:var(--accent-contrast);padding:12px 20px;border-radius:8px;font-weight:700;cursor:pointer}
-  .hero-controls{margin-top:12px;color:#fff;font-size:13px;display:flex;gap:10px;justify-content:center;align-items:center}
-
-  /* MAIN CONTENT */
-  main{max-width:1100px;margin:30px auto;padding:20px}
-  section.card{background:#fff;border-radius:10px;padding:20px;margin-bottom:20px;box-shadow:0 6px 18px rgba(10,10,10,0.06)}
-  section.card h3{margin:0 0 12px 0;color:var(--panel)}
-  p.lead{color:var(--muted);margin:0 0 10px 0}
-
-  /* Partners grid */
-  .partners{display:flex;gap:16px;flex-wrap:wrap}
-  .partner-slot{flex:1 1 30%;min-width:180px;display:flex;align-items:center;justify-content:center;height:120px;border:1px dashed #ddd;border-radius:8px;overflow:hidden;background:#fafafa}
-  .partner-slot img{max-height:100%;max-width:100%;object-fit:contain}
-
-  /* Social icons row */
-  .socials{display:flex;gap:12px;align-items:center}
-  .socials a{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:8px;background:#111;color:#fff}
-  .socials img{width:24px;height:24px}
-
-  /* News cards */
-  .news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-  .news-card{padding:14px;border-radius:8px;border:1px solid #eee;background:#fff}
-  .news-card h4{margin:0 0 8px 0}
-  .news-card p{margin:0;color:var(--muted)}
-
-  /* Footer */
-  footer{padding:18px;text-align:center;color:var(--muted);font-size:14px;margin-top:10px}
-
-  /* file inputs hidden style */
-  .hidden-file{display:none}
-
-  /* responsive tweaks */
-  @media (max-width:800px){
-    .hero h2{font-size:28px}
-    nav{display:none}
-  }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AviatesAir — Home</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-  <div class="brand">
-    <img src="Aviatesairlogo.png" alt="AviatesAir logo" id="topLogo">
-    <h1>AviatesAir</h1>
-  </div>
-
-  <nav aria-label="Main navigation">
-    <a href="fleet.html">Fleet</a>
-    <a href="signup.html">Sign Up</a>
-    <a href="news.html">News</a>
-    <a href="#about">About</a>
-    <a class="nav-cta" href="#join">Join</a>
-  </nav>
-</header>
-
-<div class="spacer"></div>
-
-<!-- HERO -->
-<section class="hero" id="hero" role="region" aria-label="Hero banner">
-  <div class="hero-inner">
-    <h2 id="heroTitle">Fly with AviatesAir</h2>
-    <p id="heroSubtitle">Experience realistic virtual airline operations with our custom ACARS integration and dedicated pilots.</p>
-
-    <div>
-      <button id="ctaJoin" onclick="location.href='signup.html'">Get Your ACARS Key</button>
-    </div>
-
-    <div class="hero-controls" style="margin-top:18px;">
-      <label style="font-size:13px;opacity:0.95">Choose hero image:</label>
-      <input id="heroFile" class="hidden-file" type="file" accept="image/*" />
-      <button style="background:transparent;border:1px solid #fff;color:#fff;padding:8px 10px;border-radius:6px" onclick="document.getElementById('heroFile').click()">Upload Image</button>
-      <button style="background:transparent;border:1px solid #fff;color:#fff;padding:8px 10px;border-radius:6px" onclick="resetHero()">Reset</button>
-    </div>
-  </div>
-</section>
-
-<main>
-
-  <!-- ABOUT -->
-  <section id="about" class="card" aria-labelledby="aboutHeading">
-    <h3 id="aboutHeading">About AviatesAir</h3>
-    <p class="lead">AviatesAir is a dedicated virtual airline offering immersive flight simulation experiences around the world. Pilots enjoy realistic ACARS systems, detailed liveries, and engaging operations designed to simulate real airline workflows.</p>
-    <p>You can edit this section directly in the HTML to change the description. The site is intentionally minimalist for clarity and easy maintenance.</p>
-  </section>
-
-  <!-- NEWS -->
-  <section id="news" class="card">
-    <h3>Latest News (temporary)</h3>
-    <div class="news-grid">
-      <article class="news-card">
-        <h4>New route: EGLL → KJFK</h4>
-        <p>We are excited to announce a new transatlantic route. Crew roster open now.</p>
-      </article>
-      <article class="news-card">
-        <h4>ACARS Beta Released</h4>
-        <p>Pilot clients can now connect to ACARS for telemetry and messaging (LAN mode).</p>
-      </article>
-      <article class="news-card">
-        <h4>Community Event</h4>
-        <p>Join our group fly this weekend — details to be posted on Discord.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- PARTNERS -->
-  <section id="partners" class="card">
-    <h3>Our Partners</h3>
-    <p class="lead">Select up to 3 partner logos below (preview only). To make them permanent, add files to the site folder and change the src attributes.</p>
-
-    <div class="partners" id="partnersGrid">
-      <div class="partner-slot" id="partnerA"><span>Partner A</span></div>
-      <div class="partner-slot" id="partnerB"><span>Partner B</span></div>
-      <div class="partner-slot" id="partnerC"><span>Partner C</span></div>
-    </div>
-
-    <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
-      <input id="pA" class="hidden-file" type="file" accept="image/*" />
-      <input id="pB" class="hidden-file" type="file" accept="image/*" />
-      <input id="pC" class="hidden-file" type="file" accept="image/*" />
-      <button onclick="document.getElementById('pA').click()">Choose Partner A</button>
-      <button onclick="document.getElementById('pB').click()">Choose Partner B</button>
-      <button onclick="document.getElementById('pC').click()">Choose Partner C</button>
-    </div>
-  </section>
-
-  <!-- SOCIAL LINKS -->
-  <section id="social" class="card">
-    <h3>Community</h3>
-    <p class="lead">Follow or join our communities</p>
-
-    <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
-      <div>
-        <a id="discordLink" href="https://discord.com" target="_blank" rel="noopener">
-          <div class="socials"><img src="discord-placeholder.png" alt="Discord logo" style="width:28px;height:28px"></div>
-        </a>
-        <div style="text-align:center;font-size:13px;color:var(--muted);margin-top:6px">Discord</div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/Aviatesairlogo.png" alt="AviatesAir logo" class="logo">
+        <span class="brand-title">AviatesAir</span>
       </div>
 
-      <div>
-        <a id="youtubeLink" href="https://youtube.com" target="_blank" rel="noopener">
-          <div class="socials"><img src="youtube-placeholder.png" alt="YouTube logo" style="width:28px;height:28px"></div>
-        </a>
-        <div style="text-align:center;font-size:13px;color:var(--muted);margin-top:6px">YouTube</div>
-      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="fleet.html">Fleet</a>
+        <a href="news.html">News</a>
+        <a href="signup.html" class="cta">Sign Up</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- JOIN -->
-  <section id="join" class="card">
-    <h3>Join AviatesAir</h3>
-    <p class="lead">Sign up and pilot for AviatesAir. After completing signup, you will receive your ACARS key.</p>
-    <p><a href="signup.html" class="nav-cta" style="display:inline-block;padding:10px 16px">Sign Up</a></p>
-  </section>
+  <main>
+    <section class="hero" id="hero" style="background-image: url('images/hero.jpg')">
+      <div class="container hero-inner">
+        <h1>Fly with AviatesAir</h1>
+        <p class="subtitle">A modern virtual airline experience — realistic operations, community events, and ACARS support.</p>
+        <div class="hero-actions">
+          <a href="signup.html" class="btn btn-primary">Get Your ACARS Key</a>
+          <a href="#about" class="btn btn-ghost">Learn More</a>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <section id="about" class="container section">
+      <div class="grid-two">
+        <div>
+          <h2>About AviatesAir</h2>
+          <p class="muted">AviatesAir is a community-driven virtual airline focused on realism, safe operations, and enjoyable group flying. We provide pilots with an ACARS client, scheduled events, and community support.</p>
+          <p>You can sign up to receive an ACARS key which authenticates your client to our systems and ties message history to your account.</p>
+        </div>
+        <div class="card quick-info">
+          <h3>Quick Links</h3>
+          <ul class="links">
+            <li><a href="fleet.html">Our Fleet</a></li>
+            <li><a href="news.html">Latest News</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  &copy; 2026 AviatesAir. All rights reserved.
-</footer>
+    <section class="container section">
+      <h2>Latest News</h2>
+      <div class="news-grid">
+        <article class="news-card">
+          <h4>ACARS Beta Launched</h4>
+          <p class="muted">Pilot clients can connect using their ACARS key. Sign up to receive a key.</p>
+        </article>
+        <article class="news-card">
+          <h4>New Route EGLL → KJFK</h4>
+          <p class="muted">Transatlantic service added to our schedule.</p>
+        </article>
+        <article class="news-card">
+          <h4>Community Fly Event</h4>
+          <p class="muted">Group fly on Saturday — details on Discord.</p>
+        </article>
+      </div>
+    </section>
 
-<script>
-  // HERO image upload/preview
-  const heroFile = document.getElementById('heroFile');
-  const heroSection = document.getElementById('hero');
+    <section class="container section">
+      <h2>Our Partners</h2>
+      <div class="partners">
+        <div class="partner"><img src="images/partner1.png" alt="Partner 1"></div>
+        <div class="partner"><img src="images/partner2.png" alt="Partner 2"></div>
+        <div class="partner"><img src="images/partner3.png" alt="Partner 3"></div>
+      </div>
+    </section>
 
-  heroFile.addEventListener('change', (e)=>{
-    const f = e.target.files[0];
-    if(!f) return;
-    const reader = new FileReader();
-    reader.onload = () => {
-      heroSection.style.backgroundImage = `linear-gradient(180deg, rgba(11,31,58,0.7), rgba(11,31,58,0.7)), url('${reader.result}')`;
-    };
-    reader.readAsDataURL(f);
-  });
+    <section class="container section community">
+      <div class="grid-two">
+        <div>
+          <h2>Join the Community</h2>
+          <p class="muted">Find us on Discord and YouTube for events, tutorials, and more.</p>
+        </div>
+        <div class="socials">
+          <a href="#" target="_blank"><img src="images/discord.png" alt="Discord"></a>
+          <a href="#" target="_blank"><img src="images/youtube.png" alt="YouTube"></a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  function resetHero(){
-    heroSection.style.backgroundImage = `linear-gradient(180deg, rgba(11,31,58,0.7), rgba(11,31,58,0.7)), url('placeholder-hero.jpg')`;
-    heroFile.value = "";
-  }
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AviatesAir. All rights reserved.</p>
+    </div>
+  </footer>
 
-  // Partner logos preview
-  function attachPreview(fileInputId, slotId){
-    const inp = document.getElementById(fileInputId);
-    const slot = document.getElementById(slotId);
-    inp.addEventListener('change', (e)=>{
-      const f = e.target.files[0]; if(!f) return;
-      const r = new FileReader();
-      r.onload = ()=> {
-        slot.innerHTML = `<img src="${r.result}" alt="Partner logo">`;
-      }
-      r.readAsDataURL(f);
-    });
-  }
-  attachPreview('pA','partnerA');
-  attachPreview('pB','partnerB');
-  attachPreview('pC','partnerC');
-
-  // Social placeholders: you can edit links directly in HTML or set dynamically:
-  // document.getElementById('discordLink').href = 'https://discord.gg/yourserver';
-  // document.getElementById('youtubeLink').href = 'https://youtube.com/yourchannel';
-</script>
-
+<script src="main.js"></script>
 </body>
 </html>
