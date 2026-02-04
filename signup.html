@@ -17,27 +17,37 @@
         <a href="index.html">Home</a>
         <a href="fleet.html">Fleet</a>
         <a href="news.html">News</a>
+        <a href="login.html">Pilot Login</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Create your AviatesAir account</h1>
+        <p class="muted">After signup you'll receive an ACARS key if the backend is available. Keep it safe — it's your pilot identity.</p>
+      </div>
+    </section>
+
     <section class="container section narrow">
-      <h2>Create an AviatesAir account</h2>
-      <p class="muted">After signup you'll receive an ACARS key if the backend is available. Keep it safe — it's your pilot identity.</p>
-
       <div class="card form-card">
-        <label>Email</label>
-        <input id="email" type="email" placeholder="you@example.com">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" autocomplete="email">
 
-        <label>Preferred Callsign (optional)</label>
-        <input id="callsign" type="text" placeholder="AVI123">
+        <div class="form-row">
+          <div>
+            <label for="callsign">Preferred Callsign (optional)</label>
+            <input id="callsign" type="text" placeholder="AVI123">
+          </div>
+          <div>
+            <label for="simbrief">SimBrief ID (optional)</label>
+            <input id="simbrief" type="text" placeholder="simbrief username or id">
+          </div>
+        </div>
 
-        <label>SimBrief ID (optional)</label>
-        <input id="simbrief" type="text" placeholder="simbrief username or id">
-
-        <label>Password</label>
-        <input id="password" type="password" placeholder="Create a password (min 8 characters)">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Create a password (min 8 characters)" autocomplete="new-password">
 
         <button id="signupBtn" class="btn btn-primary">Create Account</button>
 
