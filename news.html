@@ -1,49 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>AviatesAir — News</title>
-<style>
-  body{font-family:Inter,Segoe UI,Arial;background:#fff;color:#111;margin:0}
-  header{padding:12px 20px;border-bottom:1px solid #eee;display:flex;align-items:center;gap:12px;background:#fff}
-  header img{height:44px}
-  main{max-width:900px;margin:30px auto;padding:20px}
-  article{border-bottom:1px solid #eee;padding:18px 0}
-  h1{margin-top:0}
-  time{color:#888;font-size:13px}
-  footer{padding:20px;text-align:center;color:#666}
-  .muted{color:#666}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AviatesAir — News</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <img src="Aviatesairlogo.png" alt="logo">
-  <nav style="margin-left:auto"><a href="index.html">Home</a></nav>
-</header>
+  <header class="site-header small">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/Aviatesairlogo.png" alt="AviatesAir logo" class="logo">
+        <span class="brand-title">AviatesAir</span>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="fleet.html">Fleet</a>
+        <a href="login.html">Pilot Login</a>
+        <a href="signup.html" class="cta">Sign Up</a>
+      </nav>
+    </div>
+  </header>
 
-<main>
-  <h1>News</h1>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>News</h1>
+        <p class="muted">Latest updates from the AviatesAir operations desk.</p>
+      </div>
+    </section>
 
-  <article>
-    <h2>Site Launched</h2>
-    <time>2026-01-31</time>
-    <p class="muted">Welcome to AviatesAir — site is in demo mode. More features coming soon.</p>
-  </article>
+    <section class="container section">
+      <div class="news-grid">
+        <article class="news-card">
+          <h3>Site Launched</h3>
+          <time>2026-01-31</time>
+          <p class="muted">Welcome to AviatesAir — site is in demo mode. More features coming soon.</p>
+        </article>
 
-  <article>
-    <h2>ACARS Beta</h2>
-    <time>2026-01-31</time>
-    <p class="muted">ACARS system is in testing. Pilots will be issued keys after signup in the demo.</p>
-  </article>
+        <article class="news-card">
+          <h3>ACARS Beta</h3>
+          <time>2026-01-31</time>
+          <p class="muted">ACARS system is in testing. Pilots will be issued keys after signup in the demo.</p>
+        </article>
 
-  <article>
-    <h2>Community Event</h2>
-    <time>2026-02-06</time>
-    <p class="muted">Group fly planned — details will appear here and on Discord.</p>
-  </article>
-</main>
+        <article class="news-card">
+          <h3>Community Event</h3>
+          <time>2026-02-06</time>
+          <p class="muted">Group fly planned — details will appear here and on Discord.</p>
+        </article>
+      </div>
+    </section>
+  </main>
 
-<footer>&copy; 2026 AviatesAir</footer>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AviatesAir. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
