@@ -21,7 +21,7 @@ a{color:inherit}
 .site-header.small .header-inner{height:72px}
 .header-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:14px}
-.logo{height:46px}
+.logo{height:100px}
 .brand-title{font-weight:700;font-size:20px;color:var(--text-strong);letter-spacing:0.3px}
 .main-nav{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .main-nav a{margin-left:0;text-decoration:none;color:var(--text);font-weight:600;opacity:0.86}
