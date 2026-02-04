@@ -1,44 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AviatesAir Login</title>
-  <style>
-    body { font-family: Arial; background:#f5f5f5; padding:40px }
-    .box { max-width:400px; margin:auto; background:#fff; padding:30px; border-radius:10px }
-    input,button { width:100%; padding:10px; margin-top:10px }
-    button { background:#0b1f3a; color:#fff; border:none }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AviatesAir — Pilot Login</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="box">
-    <h2>Pilot Login</h2>
-    <input id="email" placeholder="Email">
-    <input id="password" type="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-    <p id="msg"></p>
-  </div>
+<body class="auth-page">
+  <header class="site-header small">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/Aviatesairlogo.png" alt="AviatesAir logo" class="logo">
+        <span class="brand-title">AviatesAir</span>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="routes.html">Routes</a>
+        <a href="fleet.html">Fleet</a>
+        <a href="news.html">News</a>
+        <a href="signup.html" class="cta">Sign Up</a>
+      </nav>
+    </div>
+  </header>
 
-<script>
-const API = "https://aviatesair-signup.dexterhsrees.workers.dev"
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Pilot Login</h1>
+        <p class="muted">Sign in to view your ACARS key and account status.</p>
+      </div>
+    </section>
 
-async function login() {
-  const r = await fetch(API + "/login", {
-    method:"POST",
-    headers:{ "Content-Type":"application/json" },
-    body:JSON.stringify({
-      email: email.value,
-      password: password.value
-    })
-  })
+    <section class="container section narrow">
+      <div class="card form-card">
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" placeholder="you@example.com" autocomplete="email">
 
-  const d = await r.json()
-  if (d.session) {
-    localStorage.setItem("session", d.session)
-    msg.innerText = "Login OK. ACARS Key: " + d.acarsKey
-  } else {
-    msg.innerText = d.error
-  }
-}
-</script>
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" placeholder="Your password" autocomplete="current-password">
+
+        <button id="loginBtn" class="btn btn-primary">Login</button>
+
+        <div id="loginResult" class="result" role="status" aria-live="polite" style="display:none"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 AviatesAir. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script src="main.js"></script>
 </body>
 </html>
