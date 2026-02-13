@@ -6,32 +6,22 @@
   <title>AviatesAir — Pilot Login</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header class="site-header small">
+<body class="auth-page">
+  <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
-        <img src="images/Aviatesairlogo.png" alt="AviatesAir logo" class="logo">
-        <span class="brand-title">AviatesAir</span>
-      </div>
+      <a class="brand" href="index.html"><img src="images/Aviatesairlogo.png" alt="AviatesAir logo" class="logo"><span class="brand-title">AviatesAir</span></a>
       <nav class="main-nav">
         <a href="index.html">Home</a>
-        <a href="fleet.html">Fleet</a>
-        <a href="news.html">News</a>
-        <a href="signup.html" class="cta">Sign Up</a>
+        <details class="discover"><summary>Discover</summary><div class="discover-menu"><a href="fleet.html">Fleet</a><a href="news.html">News</a><a href="info.html">Info</a><a href="routes.html">Routes</a></div></details>
+        <a href="support.html">Support</a><a href="signup.html" class="cta">Sign Up</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container">
-        <h1>Pilot Login</h1>
-        <p class="muted">Sign in to view your ACARS key and account status.</p>
-      </div>
-    </section>
-
-    <section class="container section narrow">
-      <div class="card form-card">
+    <section class="page-hero"><div class="container"><h1>Pilot Login</h1><p class="muted">Access your pilot profile and ACARS key details.</p></div></section>
+    <section class="container section" style="max-width:760px">
+      <div class="card form-card fade-in">
         <label for="loginEmail">Email</label>
         <input id="loginEmail" type="email" placeholder="you@example.com" autocomplete="email">
 
@@ -39,18 +29,13 @@
         <input id="loginPassword" type="password" placeholder="Your password" autocomplete="current-password">
 
         <button id="loginBtn" class="btn btn-primary">Login</button>
-
         <div id="loginResult" class="result" role="status" aria-live="polite" style="display:none"></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 AviatesAir. All rights reserved.</p>
-    </div>
-  </footer>
-
-<script src="main.js"></script>
+  <footer class="site-footer"><div class="container"><p>© 2026 AviatesAir. All rights reserved.</p></div></footer>
+  <script src="main.js"></script>
 </body>
 </html>
+

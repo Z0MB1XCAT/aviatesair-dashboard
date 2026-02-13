@@ -7,17 +7,24 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
-        <img src="images/AviatesairlogoWhite.png" alt="AviatesAir logo" class="logo">
-      </div>
-
+      <a class="brand" href="index.html">
+        <img src="images/Aviatesairlogo.png" alt="AviatesAir logo" class="logo">
+        <span class="brand-title">AviatesAir</span>
+      </a>
       <nav class="main-nav">
         <a href="index.html">Home</a>
-        <a href="fleet.html">Fleet</a>
-        <a href="news.html">News</a>
+        <details class="discover">
+          <summary>Discover</summary>
+          <div class="discover-menu">
+            <a href="fleet.html">Fleet</a>
+            <a href="news.html">News</a>
+            <a href="info.html">Info</a>
+            <a href="routes.html">Routes</a>
+          </div>
+        </details>
+        <a href="support.html">Support</a>
         <a href="login.html">Pilot Login</a>
         <a href="signup.html" class="cta">Sign Up</a>
       </nav>
@@ -25,40 +32,41 @@
   </header>
 
   <main>
-    <section class="hero" id="hero" style="background-image: url('images/hero.jpg')">
+    <section class="hero" style="background-image:url('images/hero.jpg')">
       <div class="container hero-inner">
-        <div>
-          <h1>Precision, community, and flight at AviatesAir.</h1>
-          <p class="subtitle">A sleek virtual airline experience built for realistic operations, ACARS tracking, and a pilot-first community.</p>
+        <div class="fade-in">
+          <h1>Professional virtual operations, built for serious pilots.</h1>
+          <p class="subtitle">AviatesAir delivers ACARS-driven flying, community events, and realistic standards without unnecessary complexity.</p>
           <div class="hero-actions">
             <a href="signup.html" class="btn btn-primary">Get Your ACARS Key</a>
-            <a href="#about" class="btn btn-ghost">Learn More</a>
+            <a href="info.html" class="btn btn-ghost">View Pilot Info</a>
           </div>
         </div>
-        <aside class="hero-panel">
-          <h3>Operations at a glance</h3>
+        <aside class="hero-panel fade-in delay-1">
+          <h3>Operations Snapshot</h3>
           <ul>
-            <li><span></span>ACARS issued on signup</li>
-            <li><span></span>Live flight logging and stats</li>
-            <li><span></span>Community events every month</li>
+            <li>Signup + login tied to backend API</li>
+            <li>ACARS key issued to each pilot account</li>
+            <li>News, routes, and fleet updates in one place</li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <section id="about" class="container section">
+    <section class="container section">
       <div class="grid-two">
-        <div>
+        <div class="fade-in">
           <h2>About AviatesAir</h2>
-          <p class="muted">AviatesAir is a community-driven virtual airline focused on realism, safe operations, and enjoyable group flying. We provide pilots with an ACARS client, scheduled events, and community support.</p>
-          <p>You can sign up to receive an ACARS key which authenticates your client to our systems and ties flight data to your account.</p>
+          <p class="muted">AviatesAir is a modern virtual airline focused on consistency, realism, and pilot growth. Our frontend is prepared for Cloudflare-backed API integration for signup, account management, and ACARS usage.</p>
+          <p>Our subsidiaries include <strong>AviatesAir</strong> (mainline), <strong>AviatesAir Sky Cargo</strong>, and <strong>AviatesAir Cityhopper</strong>.</p>
         </div>
-        <div class="card soft quick-info">
+        <div class="card fade-in delay-1">
           <h3>Quick Links</h3>
           <ul class="links">
-            <li><a href="fleet.html">Our Fleet</a></li>
-            <li><a href="news.html">Latest News</a></li>
-            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="routes.html">Route network</a></li>
+            <li><a href="fleet.html">Fleet list</a></li>
+            <li><a href="info.html">Pilot information</a></li>
+            <li><a href="support.html">Contact support</a></li>
           </ul>
         </div>
       </div>
@@ -66,50 +74,22 @@
 
     <section class="container section">
       <div class="section-title">
-        <h2>Latest News</h2>
-        <p class="muted">Updates from our ops team and community.</p>
+        <h2>From the CEO</h2>
       </div>
-      <div class="news-grid">
-        <article class="news-card">
-          <h4>ACARS Beta Launched</h4>
-          <time>2026-02-01</time>
-          <p class="muted">Pilot clients can connect using their ACARS key. Sign up to receive a key.</p>
-        </article>
-        <article class="news-card">
-          <h4>New Route EGLL → KJFK</h4>
-          <time>2026-02-08</time>
-          <p class="muted">Transatlantic service added to our schedule.</p>
-        </article>
-        <article class="news-card">
-          <h4>Community Fly Event</h4>
-          <time>2026-02-14</time>
-          <p class="muted">Group fly on Saturday — details on Discord.</p>
-        </article>
+      <div class="card fade-in">
+        <p class="quote-text">“AviatesAir is being built to give every pilot a reliable and immersive VA home. We fly with standards, but we grow with people.”</p>
+        <p class="muted">— CEO, AviatesAir (editable)</p>
       </div>
     </section>
 
     <section class="container section">
       <div class="section-title">
-        <h2>Our Partners</h2>
-        <p class="muted">Collaborations that keep our pilots connected.</p>
+        <h2>Community</h2>
+        <p class="muted">Join us for events, tutorials, and route launches.</p>
       </div>
-      <div class="partners">
-        <div class="partner">SimBrief</div>
-        <div class="partner">VATSIM</div>
-        <div class="partner">Discord</div>
-      </div>
-    </section>
-
-    <section class="container section community">
-      <div class="grid-two">
-        <div>
-          <h2>Join the Community</h2>
-          <p class="muted">Find us on Discord and YouTube for events, tutorials, and more.</p>
-        </div>
-        <div class="socials">
-          <a href="#" target="_blank" rel="noopener noreferrer">Discord</a>
-          <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
-        </div>
+      <div class="socials">
+        <a href="https://discord.gg/WjBubsD8E9" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a href="https://www.youtube.com/@AviatesAir" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
     </section>
   </main>
@@ -120,9 +100,7 @@
     </div>
   </footer>
 
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
-
-
 
