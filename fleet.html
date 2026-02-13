@@ -1,53 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>AviatesAir — Fleet</title>
-<style>
-  body{font-family:Inter,Segoe UI,Arial;background:#fff;color:#111;margin:0}
-  header{padding:12px 20px;border-bottom:1px solid #eee;display:flex;align-items:center;gap:12px;background:#fff}
-  header img{height:44px}
-  main{max-width:1000px;margin:30px auto;padding:20px}
-  h1{color:#111}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-  .card{border:1px solid #eee;padding:12px;border-radius:8px;background:#fff;box-shadow:0 6px 18px rgba(10,10,10,0.03)}
-  .card img{width:100%;border-radius:6px}
-  footer{padding:20px;text-align:center;color:#666}
-  .muted{color:#666;font-size:14px}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AviatesAir — Fleet</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <img src="Aviatesairlogo.png" alt="logo">
-  <nav style="margin-left:auto"><a href="index.html">Home</a></nav>
-</header>
-
-<main>
-  <h1>Our Fleet</h1>
-  <p class="muted">Placeholder fleet — replace images and descriptions with real fleet entries.</p>
-
-  <div class="grid">
-    <div class="card">
-      <img src="placeholder1.jpg" alt="A320">
-      <h3>A320</h3>
-      <p class="muted">Short/medium haul narrowbody.</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/Aviatesairlogo.png" alt="AviatesAir logo" class="logo">
+        <span class="brand-title">AviatesAir</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <details class="discover">
+          <summary>Discover</summary>
+          <div class="discover-menu">
+            <a href="fleet.html">Fleet</a>
+            <a href="news.html">News</a>
+            <a href="info.html">Info</a>
+            <a href="routes.html">Routes</a>
+          </div>
+        </details>
+        <a href="support.html">Support</a>
+        <a href="login.html">Pilot Login</a>
+        <a href="signup.html" class="cta">Sign Up</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="card">
-      <img src="placeholder2.jpg" alt="B737">
-      <h3>B737</h3>
-      <p class="muted">Workhorse narrowbody for regional routes.</p>
-    </div>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Fleet</h1>
+        <p class="muted">Organized by manufacturer for easier browsing and future dispatch planning.</p>
+      </div>
+    </section>
 
-    <div class="card">
-      <img src="placeholder3.jpg" alt="B787">
-      <h3>B787</h3>
-      <p class="muted">Long-haul widebody for intercontinental services.</p>
-    </div>
-  </div>
-</main>
+    <section class="container section">
+      <h2 class="group-title">Airbus Fleet</h2>
+      <div class="fleet-grid">
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>A319</h3><p class="muted">Compact narrowbody ideal for short sector operations and training legs.</p></article>
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>A320NEO</h3><p class="muted">Efficient short/medium-haul aircraft with modern avionics and strong route flexibility.</p></article>
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>A380</h3><p class="muted">Flagship long-haul aircraft suited for high-capacity hub-to-hub flights.</p></article>
+      </div>
 
-<footer>&copy; 2026 AviatesAir</footer>
+      <h2 class="group-title">Boeing Fleet</h2>
+      <div class="fleet-grid">
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>B736</h3><p class="muted">Reliable classic narrowbody for regional passenger rotations.</p></article>
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>B38M</h3><p class="muted">Modern narrowbody with improved efficiency for busy network schedules.</p></article>
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>B739ER</h3><p class="muted">Extended-range narrowbody used on high-demand domestic and medium routes.</p></article>
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>B77F</h3><p class="muted">Long-haul freighter backbone for AviatesAir Sky Cargo operations.</p></article>
+      </div>
+
+      <h2 class="group-title">ATR Fleet</h2>
+      <div class="fleet-grid">
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>ATR72</h3><p class="muted">Regional turboprop for short commuter sectors with excellent field performance.</p></article>
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>ATR 42</h3><p class="muted">Smaller regional platform ideal for Cityhopper routes and low-demand markets.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>© 2026 AviatesAir. All rights reserved.</p></div></footer>
 </body>
 </html>
