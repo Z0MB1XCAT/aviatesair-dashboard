@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AviatesAir — Pilot Portal</title>
+  <link rel="icon" type="image/png" href="images/Aviatesairlogo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><img src="images/Aviatesairlogo.png" alt="AviatesAir" class="logo"></a>
+    <nav class="main-nav">
+      <a href="#dashboard">Dashboard</a><a href="#profile">Profile</a><a href="#pireps">PIREPs</a><a href="#ranks">Ranks</a><a href="#awards">Awards</a><a href="#booking">Book Flight</a><a href="#events">Events</a><a href="#fleetaccess">Fleet Access</a><a href="#analytics">Analytics</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="page-hero" style="--page-hero-image:url('images/hero.jpg')"><div class="container"><h1>Pilot Portal</h1><p class="muted">Demo dashboard preview — values shown below are placeholders until live backend data is connected.</p></div></section>
+
+  <section id="dashboard" class="container section">
+    <div class="section-title"><h2>1) Dashboard</h2></div>
+    <div class="portal-grid">
+      <article class="stat-card"><h3>Total Flight Hours</h3><p><strong>184.5 hrs</strong></p><p class="muted">Demo metric (temporary)</p></article>
+      <article class="stat-card"><h3>Flights This Month</h3><p><strong>12 flights</strong></p><p class="muted">Demo metric (temporary)</p></article>
+      <article class="stat-card"><h3>Upcoming Events</h3><p class="muted">Group Flight Friday, Cargo Ops Sunday</p></article>
+      <article class="stat-card"><h3>Recent Announcements</h3><p class="muted">New route packs and rank perks coming soon.</p></article>
+    </div>
+    <div class="card" style="margin-top:14px"><h3>Rank Progress to Next Rank</h3><div class="progress-wrap"><div class="progress-bar" style="width:62%"></div></div><p class="muted">First Officer → Senior First Officer (62% complete)</p><a href="#pireps" class="btn btn-primary">File PIREP</a></div>
+  </section>
+
+  <section id="profile" class="container section">
+    <div class="section-title"><h2>2) Pilot Profile</h2></div>
+    <div class="grid-two">
+      <div class="card">
+        <p><strong>Pilot ID:</strong> AVA-1024</p><p><strong>Callsign:</strong> AVI247</p><p><strong>Rank:</strong> First Officer</p><p><strong>Join Date:</strong> 2026-01-15</p><p><strong>Total Flights:</strong> 86</p><p><strong>Total Hours:</strong> 184.5</p><p><strong>Preferred Aircraft:</strong> A320NEO</p><p><strong>Awards & Badges:</strong> Butter Landing, Event Winner</p><p><strong>Public Profile:</strong> <a href="#">aviatesair.va/pilot/AVI247</a></p>
+      </div>
+      <div class="card"><img class="fleet-image" src="images/hero.jpg" alt="Profile screenshot"><p class="muted">Profile picture / livery screenshot placeholder.</p></div>
+    </div>
+  </section>
+
+  <section id="pireps" class="container section">
+    <div class="section-title"><h2>3) Flight Logging (PIREPs)</h2></div>
+    <div class="card form-card">
+      <div class="form-row"><input placeholder="Route (e.g. EGLL-KJFK)"><input placeholder="Aircraft"><input placeholder="Duration"></div>
+      <div class="form-row"><input placeholder="Landing Rate (fpm)"><select><option>Approved</option><option>Pending</option></select><input placeholder="XP earned"></div>
+      <textarea rows="3" placeholder="Notes / ACARS reference"></textarea>
+      <button class="btn btn-primary">Submit Manual PIREP</button>
+      <p class="muted">Auto-import from SimBrief/ACARS: <span class="pill">Planned for future backend integration</span></p>
+    </div>
+    <div class="card" style="margin-top:12px"><h3>Flight History (demo)</h3><p class="muted">EGLL-KJFK | A320NEO | 07:35 | -148 fpm | Approved</p><p class="muted">EDDF-LEMD | A319 | 02:18 | -240 fpm | Pending</p></div>
+  </section>
+
+  <section id="ranks" class="container section"><div class="section-title"><h2>4) Rank Progression</h2></div><div class="card"><p><strong>Current Rank:</strong> First Officer</p><p><strong>Required for Next Rank:</strong> 250 hours</p><div class="progress-wrap"><div class="progress-bar" style="width:74%"></div></div><p class="muted">Rank perks example: unlock long-haul aircraft and special event priority.</p><p class="muted">Cadet → First Officer → Senior First Officer → Captain → Senior Captain</p></div></section>
+
+  <section id="awards" class="container section"><div class="section-title"><h2>5) Awards & Achievements</h2></div><div class="portal-grid"><article class="stat-card">🛬 Butter Landing<br><span class="muted">&lt; -150 fpm</span></article><article class="stat-card">🌍 Long Haul Expert<br><span class="muted">10+ hour flight</span></article><article class="stat-card">🔁 50 Flights Completed</article><article class="stat-card">🏆 Event Winner</article></div></section>
+
+  <section id="booking" class="container section"><div class="section-title"><h2>6) Book a Flight</h2></div><div class="card"><p class="muted">Browse routes, reserve a flight slot, see if another pilot already booked, and track assigned legs.</p><div class="form-row"><select><option>Browse route</option></select><button class="btn btn-primary">Reserve Flight</button><span class="pill">Assigned flights: 2 (demo)</span></div></div></section>
+
+  <section id="events" class="container section"><div class="section-title"><h2>7) Event Center</h2></div><div class="portal-grid"><article class="stat-card"><h3>Upcoming Group Flights</h3><p class="muted">Saturday 1900z - Europe Shuttle</p><button class="btn btn-ghost">Sign Up</button></article><article class="stat-card"><h3>Countdown</h3><p><strong>02d 14h 23m</strong></p><p class="muted">Demo countdown</p></article><article class="stat-card"><h3>Previous Event Results</h3><p class="muted">Last winner: AVI305, best landing -96 fpm.</p></article></div></section>
+
+  <section id="fleetaccess" class="container section"><div class="section-title"><h2>8) Fleet Access</h2></div><div class="portal-grid"><article class="stat-card"><h3>Aircraft by Rank</h3><p class="muted">Cadet: ATR42/ATR72. FO+: A319/A320NEO. Captain+: B77F/A380.</p></article><article class="stat-card"><h3>Fleet Stats</h3><p class="muted">Most flown this week: A320NEO (demo).</p></article><article class="stat-card"><h3>Recommended Routes</h3><p class="muted">A319: regional hubs, B77F: cargo corridors.</p></article><article class="stat-card"><h3>Livery Downloads</h3><p class="muted">Placeholder links until CDN is connected.</p></article></div></section>
+
+  <section id="analytics" class="container section"><div class="section-title"><h2>9) Stats & Analytics</h2></div><div class="portal-grid"><article class="stat-card"><h3>Average Landing Rate</h3><p><strong>-182 fpm</strong></p><p class="muted">Demo value</p></article><article class="stat-card"><h3>Longest Flight</h3><p><strong>11h 42m</strong></p><p class="muted">Demo value</p></article><article class="stat-card"><h3>Favourite Airport</h3><p><strong>EGLL</strong></p><p class="muted">Demo value</p></article><article class="stat-card"><h3>Most Used Aircraft</h3><p><strong>A320NEO</strong></p><p class="muted">Demo value</p></article></div><div class="card" style="margin-top:12px"><h3>Route Heatmap</h3><p class="muted">Heatmap placeholder: backend route telemetry integration pending.</p></div></section>
+</main>
+<footer class="site-footer"><div class="container"><p>© 2026 AviatesAir. All rights reserved.</p></div></footer>
+</body>
+</html>
 
