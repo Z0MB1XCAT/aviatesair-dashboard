@@ -1,44 +1,5 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>AviatesAir Login</title>
-  <style>
-    body { font-family: Arial; background:#f5f5f5; padding:40px }
-    .box { max-width:400px; margin:auto; background:#fff; padding:30px; border-radius:10px }
-    input,button { width:100%; padding:10px; margin-top:10px }
-    button { background:#0b1f3a; color:#fff; border:none }
-  </style>
-</head>
-<body>
-  <div class="box">
-    <h2>Pilot Login</h2>
-    <input id="email" placeholder="Email">
-    <input id="password" type="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-    <p id="msg"></p>
-  </div>
-
-<script>
-const API = "https://aviatesair-signup.dexterhsrees.workers.dev"
-
-async function login() {
-  const r = await fetch(API + "/login", {
-    method:"POST",
-    headers:{ "Content-Type":"application/json" },
-    body:JSON.stringify({
-      email: email.value,
-      password: password.value
-    })
-  })
-
-  const d = await r.json()
-  if (d.session) {
-    localStorage.setItem("session", d.session)
-    msg.innerText = "Login OK. ACARS Key: " + d.acarsKey
-  } else {
-    msg.innerText = d.error
-  }
-}
-</script>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>AviatesAir — Pilot Login</title><link rel="icon" type="image/png" href="images/Aviatesairlogo.png"><link rel="stylesheet" href="styles.css"></head>
+<body class="auth-page"><header class="site-header"><div class="container header-inner"><a class="brand" href="index.html"><img src="images/Aviatesairlogo.png" alt="AviatesAir" class="logo"></a><nav class="main-nav"><a href="index.html">Home</a><details class="discover"><summary>Discover</summary><div class="discover-menu"><a href="fleet.html">Fleet</a><a href="news.html">News</a><a href="info.html">Info</a><a href="routes.html">Routes</a></div></details><a href="support.html">Support</a><a href="signup.html" class="cta">Sign Up</a></nav></div></header>
+<main><section class="page-hero" style="--page-hero-image:url('images/hero.jpg')"><div class="container"><h1>Pilot Login</h1><p class="muted">Access your pilot profile and ACARS key details.</p></div></section><section class="container section" style="max-width:760px"><div class="card form-card"><label for="loginEmail">Email</label><input id="loginEmail" type="email" placeholder="you@example.com" autocomplete="email"><label for="loginPassword">Password</label><input id="loginPassword" type="password" placeholder="Your password" autocomplete="current-password"><button id="loginBtn" class="btn btn-primary">Login</button><div id="loginResult" class="result" role="status" aria-live="polite" style="display:none"></div></div></section></main>
+<footer class="site-footer"><div class="container"><p>© 2026 AviatesAir. All rights reserved.</p></div></footer><script src="main.js"></script></body></html>
