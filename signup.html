@@ -4,56 +4,81 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AviatesAir — Signup</title>
+  <link rel="icon" type="image/png" href="images/Aviatesairlogo.png">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header class="site-header small">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="images/Aviatesairlogo.png" alt="AviatesAir logo" class="logo">
-        <span class="brand-title">AviatesAir</span>
-      </div>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="fleet.html">Fleet</a>
-        <a href="news.html">News</a>
-      </nav>
+<body class="auth-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><img src="images/Aviatesairlogo.png" alt="AviatesAir" class="logo"></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <details class="discover"><summary>Discover</summary><div class="discover-menu"><a href="fleet.html">Fleet</a><a href="news.html">News</a><a href="info.html">Info</a><a href="routes.html">Routes</a></div></details>
+      <a href="support.html">Support</a>
+      <a href="login.html">Pilot Login</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" style="--page-hero-image:url('images/signup-hero.jpg')">
+    <div class="container">
+      <h1>Create your AviatesAir account</h1>
+      <p class="muted">Enter your details to receive an ACARS-enabled account and open the pilot portal.</p>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="container section narrow">
-      <h2>Create an AviatesAir account</h2>
-      <p class="muted">After signup you'll receive an ACARS key if the backend is available. Keep it safe — it's your pilot identity.</p>
-
+  <section class="container section">
+    <div class="signup-layout">
       <div class="card form-card">
-        <label>Email</label>
-        <input id="email" type="email" placeholder="you@example.com">
+        <div class="form-row">
+          <div>
+            <label for="firstName">First Name</label>
+            <input id="firstName" type="text" placeholder="John" autocomplete="given-name">
+            <p class="small-note">Use your real first name. Abbreviations or fake names cannot be changed later.</p>
+          </div>
+          <div>
+            <label for="lastName">Last Name</label>
+            <input id="lastName" type="text" placeholder="Doe" autocomplete="family-name">
+            <p class="small-note">Use your real last name. Abbreviations or fake names cannot be changed later.</p>
+          </div>
+        </div>
 
-        <label>Preferred Callsign (optional)</label>
-        <input id="callsign" type="text" placeholder="AVI123">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" autocomplete="email">
 
-        <label>SimBrief ID (optional)</label>
-        <input id="simbrief" type="text" placeholder="simbrief username or id">
+        <label for="simbrief">SimBrief ID</label>
+        <input id="simbrief" type="text" placeholder="SimBrief username or ID">
 
-        <label>Password</label>
-        <input id="password" type="password" placeholder="Create a password (min 8 characters)">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="At least 8 characters" autocomplete="new-password">
 
         <button id="signupBtn" class="btn btn-primary">Create Account</button>
-
         <div id="result" class="result" role="status" aria-live="polite" style="display:none"></div>
       </div>
 
-      <p class="muted small">By signing up you agree to the AviatesAir community rules. This is a demo environment — do not reuse critical passwords.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 AviatesAir. All rights reserved.</p>
+      <aside class="card requirements">
+        <h3>Requirements</h3>
+        <ul>
+          <li>Must have at least 1 aircraft in the AviatesAir fleet.</li>
+          <li>Microsoft Flight Simulator 2020 or 2024.</li>
+          <li>A computer powerful enough for stable simulator operations.</li>
+          <li>Age 13+ at the point of registration.</li>
+        </ul>
+      </aside>
     </div>
-  </footer>
+  </section>
 
+  <section class="container section">
+    <div class="card">
+      <h2>Why choose AviatesAir?</h2>
+      <p class="muted">AviatesAir is focused on giving pilots a structured and realistic virtual airline experience with supportive staff, clear standards, and a growing route network. Whether you enjoy short regional hops or long-haul operations, we provide an active environment where your flights contribute to something bigger than random free-flying.</p>
+      <p class="muted">We provide training-minded operations, community events, and a future-ready ACARS ecosystem designed to track your progress as a serious pilot. In return, we expect professionalism, maturity, and a willingness to keep improving your skills while treating fellow pilots with respect. Talent matters, but consistency and attitude matter even more in our airline culture.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="container"><p>© 2026 AviatesAir. All rights reserved.</p></div></footer>
 <script src="main.js"></script>
 </body>
 </html>

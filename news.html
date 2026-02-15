@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>AviatesAir — News</title>
-<style>
-  body{font-family:Inter,Segoe UI,Arial;background:#fff;color:#111;margin:0}
-  header{padding:12px 20px;border-bottom:1px solid #eee;display:flex;align-items:center;gap:12px;background:#fff}
-  header img{height:44px}
-  main{max-width:900px;margin:30px auto;padding:20px}
-  article{border-bottom:1px solid #eee;padding:18px 0}
-  h1{margin-top:0}
-  time{color:#888;font-size:13px}
-  footer{padding:20px;text-align:center;color:#666}
-  .muted{color:#666}
-</style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>AviatesAir — News</title>
+  <link rel="icon" type="image/png" href="images/Aviatesairlogo.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <img src="Aviatesairlogo.png" alt="logo">
-  <nav style="margin-left:auto"><a href="index.html">Home</a></nav>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><img src="images/Aviatesairlogo.png" alt="AviatesAir" class="logo"></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <details class="discover"><summary>Discover</summary><div class="discover-menu"><a href="fleet.html">Fleet</a><a href="news.html">News</a><a href="info.html">Info</a><a href="routes.html">Routes</a></div></details>
+      <a href="support.html">Support</a>
+      <a href="login.html">Pilot Login</a>
+      <a href="signup.html" class="cta">Sign Up</a>
+    </nav>
+  </div>
 </header>
 
 <main>
-  <h1>News</h1>
+  <section class="page-hero" style="--page-hero-image:url('images/news-hero.jpg')">
+    <div class="container">
+      <h1>News</h1>
+      <p class="muted">Major updates, announcements, and community milestones.</p>
+    </div>
+  </section>
 
-  <article>
-    <h2>Site Launched</h2>
-    <time>2026-01-31</time>
-    <p class="muted">Welcome to AviatesAir — site is in demo mode. More features coming soon.</p>
-  </article>
+  <section class="container section">
+    <div class="news-grid" style="grid-template-columns:1fr;gap:20px;">
+      <article class="news-feature-card">
+        <img src="images/news-block-1.jpg" alt="News banner 1">
+        <div class="content">
+          <h3>Network Expansion Planning</h3>
+          <p class="muted">Our operations team has begun rolling out staged route expansion to support both Cityhopper and Mainline activity, with new medium-haul pairings expected to improve traffic flow and provide more rank-appropriate options for developing pilots. Dispatch balancing and event scheduling are being aligned so routes remain active and meaningful rather than duplicated.</p>
+        </div>
+      </article>
 
-  <article>
-    <h2>ACARS Beta</h2>
-    <time>2026-01-31</time>
-    <p class="muted">ACARS system is in testing. Pilots will be issued keys after signup in the demo.</p>
-  </article>
+      <article class="news-feature-card">
+        <img src="images/news-block-2.jpg" alt="News banner 2">
+        <div class="content">
+          <h3>ACARS & Pilot Experience Improvements</h3>
+          <p class="muted">AviatesAir is refining the full pilot journey from signup through logging and analytics so members can clearly track progress, rank growth, and participation. While some dashboard telemetry is still in placeholder mode pending backend completion, the frontend structure now mirrors how live airline data will be surfaced when Cloudflare-connected services are finalized.</p>
+        </div>
+      </article>
 
-  <article>
-    <h2>Community Event</h2>
-    <time>2026-02-06</time>
-    <p class="muted">Group fly planned — details will appear here and on Discord.</p>
-  </article>
+      <article class="news-feature-card">
+        <img src="images/news-block-3.jpg" alt="News banner 3">
+        <div class="content">
+          <h3>Community Training & Standards</h3>
+          <p class="muted">Our training focus remains on realistic SOP-based flying, clean communication, and professional conduct in shared events. New pilots are encouraged to engage with experienced captains, participate in group operations, and maintain maturity throughout interactions. This ensures AviatesAir grows around quality and reliability rather than just raw flight volume.</p>
+        </div>
+      </article>
+    </div>
+  </section>
 </main>
 
-<footer>&copy; 2026 AviatesAir</footer>
+<footer class="site-footer"><div class="container"><p>© 2026 AviatesAir. All rights reserved.</p></div></footer>
 </body>
 </html>
