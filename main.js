@@ -1,44 +1,29 @@
-const WORKER_URL = "https://aviatesair-signup.dexterhsrees.workers.dev";
+// main.js — update WORKER_URL to your deployed Worker before using any backend calls
+const WORKER_URL = "https://aviatesair-signup.dexterhsrees.workers.dev"; // <-- REPLACE this
+
+// If index has a "Get Your ACARS Key" action in the future, it can call generate or link to signup.
+// For signup page, we wire the button below.
 
 document.addEventListener("DOMContentLoaded", () => {
-  const hero = document.getElementById("homeHero");
-  if (hero) {
-    const heroImages = [
-      "images/hero-home-1.jpg",
-      "images/hero-home-2.jpg",
-      "images/hero-home-3.jpg",
-      "images/hero-home-4.jpg",
-      "images/hero-home-5.jpg"
-    ];
-    let i = 0;
-    setInterval(() => {
-      i = (i + 1) % heroImages.length;
-      hero.classList.remove("fade");
-      hero.style.backgroundImage = `url('${heroImages[i]}')`;
-      void hero.offsetWidth;
-      hero.classList.add("fade");
-    }, 5500);
-  }
-
   const signupBtn = document.getElementById("signupBtn");
   if (signupBtn) {
     signupBtn.addEventListener("click", async () => {
-      const firstName = document.getElementById("firstName")?.value.trim() || "";
-      const lastName = document.getElementById("lastName")?.value.trim() || "";
-      const email = document.getElementById("email")?.value.trim() || "";
-      const password = document.getElementById("password")?.value || "";
-      const simbrief = document.getElementById("simbrief")?.value.trim() || "";
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const callsign = document.getElementById("callsign").value.trim();
+      const simbrief = document.getElementById("simbrief").value.trim();
       const result = document.getElementById("result");
 
       result.style.display = "block";
       result.textContent = "Creating account...";
       signupBtn.disabled = true;
 
-      if (!firstName || !lastName || !email || !simbrief || !password) {
-        result.textContent = "Please fill all required fields.";
+      if (!email || !password) {
+        result.textContent = "Please fill email and password.";
         signupBtn.disabled = false;
         return;
       }
+
       if (password.length < 8) {
         result.textContent = "Password must be at least 8 characters.";
         signupBtn.disabled = false;
@@ -49,13 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const resp = await fetch(WORKER_URL + "/api/signup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ firstName, lastName, email, password, simbrief })
+          body: JSON.stringify({ email, password, callsign, simbrief })
         });
+
         const json = await resp.json().catch(() => ({}));
 
-        if (resp.ok && (json.success || json.session || json.acarsKey)) {
-          result.textContent = "Signup complete! Opening Pilot Portal...";
-          window.open("pilotportal.html", "_blank", "noopener,noreferrer");
+        if (resp.ok && json.success) {
+          result.textContent = "Signup complete! Your ACARS Key: " + json.acarsKey;
         } else {
           result.textContent = json.error || "Signup failed. Try again.";
         }
@@ -90,12 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password })
         });
+
         const json = await resp.json().catch(() => ({}));
 
         if (resp.ok && json.session) {
           sessionStorage.setItem("session", json.session);
-          result.textContent = "Login successful. Opening Pilot Portal...";
-          window.open("pilotportal.html", "_blank", "noopener,noreferrer");
+          result.textContent = "Login successful. Your ACARS Key: " + json.acarsKey;
         } else {
           result.textContent = json.error || "Login failed. Try again.";
         }

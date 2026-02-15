@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AviatesAir — Fleet</title>
-  <link rel="icon" type="image/png" href="images/Aviatesairlogo.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html"><img src="images/Aviatesairlogo.png" alt="AviatesAir" class="logo"></a>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <details class="discover"><summary>Discover</summary><div class="discover-menu"><a href="fleet.html">Fleet</a><a href="news.html">News</a><a href="info.html">Info</a><a href="routes.html">Routes</a></div></details>
-      <a href="support.html">Support</a>
-      <a href="login.html">Pilot Login</a>
-      <a href="signup.html" class="cta">Sign Up</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <section class="page-hero" style="--page-hero-image:url('images/fleet-hero.jpg')">
-    <div class="container">
-      <h1>Fleet</h1>
-      <p class="muted">Image paths are pre-wired in /images so you can drop in your own aircraft artwork.</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/Aviatesairlogo.png" alt="AviatesAir logo" class="logo">
+        <span class="brand-title">AviatesAir</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <details class="discover">
+          <summary>Discover</summary>
+          <div class="discover-menu">
+            <a href="fleet.html">Fleet</a>
+            <a href="news.html">News</a>
+            <a href="info.html">Info</a>
+            <a href="routes.html">Routes</a>
+          </div>
+        </details>
+        <a href="support.html">Support</a>
+        <a href="login.html">Pilot Login</a>
+        <a href="signup.html" class="cta">Sign Up</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="container section">
-    <h2 class="group-title">Airbus Fleet</h2>
-    <div class="fleet-grid">
-      <article class="fleet-card"><img class="fleet-image" src="images/fleet-a319.jpg" alt="A319"><h3>A319</h3><p class="muted">Compact narrowbody ideal for short sector operations and training legs.</p></article>
-      <article class="fleet-card"><img class="fleet-image" src="images/fleet-a320neo.jpg" alt="A320NEO"><h3>A320NEO</h3><p class="muted">Efficient short/medium-haul aircraft with modern avionics and route flexibility.</p></article>
-      <article class="fleet-card"><img class="fleet-image" src="images/fleet-a380.jpg" alt="A380"><h3>A380</h3><p class="muted">Flagship long-haul aircraft suited for high-capacity hub-to-hub flights.</p></article>
-    </div>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Fleet</h1>
+        <p class="muted">Organized by manufacturer for easier browsing and future dispatch planning.</p>
+      </div>
+    </section>
 
-    <h2 class="group-title">Boeing Fleet</h2>
-    <div class="fleet-grid">
-      <article class="fleet-card"><img class="fleet-image" src="images/fleet-b736.jpg" alt="B736"><h3>B736</h3><p class="muted">Reliable classic narrowbody for regional passenger rotations.</p></article>
-      <article class="fleet-card"><img class="fleet-image" src="images/fleet-b38m.jpg" alt="B38M"><h3>B38M</h3><p class="muted">Modern narrowbody with improved efficiency for busy network schedules.</p></article>
-      <article class="fleet-card"><img class="fleet-image" src="images/fleet-b739er.jpg" alt="B739ER"><h3>B739ER</h3><p class="muted">Extended-range narrowbody used on high-demand domestic and medium routes.</p></article>
-      <article class="fleet-card"><img class="fleet-image" src="images/fleet-b77f.jpg" alt="B77F"><h3>B77F</h3><p class="muted">Long-haul freighter backbone for AviatesAir Sky Cargo operations.</p></article>
-    </div>
+    <section class="container section">
+      <h2 class="group-title">Airbus Fleet</h2>
+      <div class="fleet-grid">
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>A319</h3><p class="muted">Compact narrowbody ideal for short sector operations and training legs.</p></article>
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>A320NEO</h3><p class="muted">Efficient short/medium-haul aircraft with modern avionics and strong route flexibility.</p></article>
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>A380</h3><p class="muted">Flagship long-haul aircraft suited for high-capacity hub-to-hub flights.</p></article>
+      </div>
 
-    <h2 class="group-title">ATR Fleet</h2>
-    <div class="fleet-grid">
-      <article class="fleet-card"><img class="fleet-image" src="images/fleet-atr72.jpg" alt="ATR72"><h3>ATR72</h3><p class="muted">Regional turboprop for short commuter sectors with strong field performance.</p></article>
-      <article class="fleet-card"><img class="fleet-image" src="images/fleet-atr42.jpg" alt="ATR 42"><h3>ATR 42</h3><p class="muted">Smaller platform ideal for Cityhopper routes and low-demand markets.</p></article>
-    </div>
-  </section>
-</main>
+      <h2 class="group-title">Boeing Fleet</h2>
+      <div class="fleet-grid">
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>B736</h3><p class="muted">Reliable classic narrowbody for regional passenger rotations.</p></article>
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>B38M</h3><p class="muted">Modern narrowbody with improved efficiency for busy network schedules.</p></article>
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>B739ER</h3><p class="muted">Extended-range narrowbody used on high-demand domestic and medium routes.</p></article>
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>B77F</h3><p class="muted">Long-haul freighter backbone for AviatesAir Sky Cargo operations.</p></article>
+      </div>
 
-<footer class="site-footer"><div class="container"><p>© 2026 AviatesAir. All rights reserved.</p></div></footer>
+      <h2 class="group-title">ATR Fleet</h2>
+      <div class="fleet-grid">
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>ATR72</h3><p class="muted">Regional turboprop for short commuter sectors with excellent field performance.</p></article>
+        <article class="fleet-card"><div class="fleet-thumb"></div><h3>ATR 42</h3><p class="muted">Smaller regional platform ideal for Cityhopper routes and low-demand markets.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>© 2026 AviatesAir. All rights reserved.</p></div></footer>
 </body>
 </html>
